@@ -13,7 +13,7 @@ $(document).ready(function( data ) {
     setFormToSelected();
   });
   
-  $('.autosearch').on('keyup focus', function() {
+  $('.autosearch').focus().on('keyup focus', function() {
     if( autosearch.val() != '' ) {
       $('.searchselectors.hidden').removeClass('hidden'); 
     } else {
