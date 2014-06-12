@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Google",
+    "url": "https://www.google.ca/search",
+    "param": "q"
+  },
+  {
+    "name": "Stack Overflow",
+    "url": "http://stackoverflow.com/search",
+    "param": "q"
+  },
+  {
+    "name": "Mozilla Developer Network",
+    "url": "https://developer.mozilla.org/en-US/search",
+    "param": "q"
+  },
+  {
+    "name": "Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php",
+    "param": "search"
+  }
+]

@@ -1,0 +1,15 @@
+@import "susy";
+@import "breakpoint";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+);
+
+main {
+  margin: 1em 2.25em;
+  padding: 8pt;
+  @include breakpoint(1024px) {
+    @include container(960px);
+  }
+}

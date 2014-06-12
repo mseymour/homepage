@@ -1,0 +1,33 @@
+body {
+  background-color: #22313F;
+  color: #FFF;
+}
+
+.searchselectors.hidden, .actions {
+  display: none;
+}
+
+input[type=search] {
+  &:focus { background-color: #34495E; }
+  @include box-sizing(border-box);
+  background-color: #2C3E50;
+  border: 0 none transparent;
+  padding: 8pt;
+  width: 100%;
+  @include placeholder {
+    opacity: 1;
+    color: #6BB9F0;
+  }
+}
+
+.searchselectors {
+  background-color: #2C3E50;
+  border-radius: 4pt;
+  overflow: hidden;
+  padding: 0;
+  li { 
+    list-style: none;
+    padding: 8pt;
+  }
+  .selected { background-color: #FFF; color: #2C3E50; }
+}
