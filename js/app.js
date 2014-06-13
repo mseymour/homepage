@@ -19,6 +19,7 @@ var SearchWidget = (function () {
     },
 
     bindUIActions: function() {
+      // Populate the "dropdown" with our items from the file set by s.jsonURL (./search.json by default)
       $.getJSON(s.jsonURL, function( data ) {
         var items = [];
         $.each( data, function( key, val ) {
@@ -27,7 +28,6 @@ var SearchWidget = (function () {
         });
 
         s.searchSelectors.html(items.join( '' ));
-        //SearchWidget.setFormToSelected();
       });
       
       s.searchForm.on('submit', function ( event ) {
@@ -36,12 +36,14 @@ var SearchWidget = (function () {
       });
   
       s.searchInput.focus().on('keyup focus', function() {
+        // Unhide the search item list.
         if( s.searchInput.val() != '' ) {
           s.searchSelectors.filter('.hidden').removeClass('hidden'); 
         } else {
           s.searchSelectors.addClass('hidden');
         }
-    
+        
+        // Set the (by default empty) b.query element for each selection to our query from the textbox.
         s.searchSelectors.find('li .query').text(s.searchInput.val());
       
       }).on('keydown', function( event ) {
@@ -49,7 +51,8 @@ var SearchWidget = (function () {
           var selected = s.searchSelectors.find('.selected');
           var items = s.searchSelectors.find('li');
       
-          if ( event.keyCode == 38 || event.keyCode == 40 ) { // arrow up/down
+          if ( event.keyCode == 38 || event.keyCode == 40 ) {
+            // setting selection state on previous/next sibling on pressing arrow up/down
             var direction = event.keyCode == 38 ? 'prev' : 'next';
             selected.toggleClass('selected');
         
@@ -72,6 +75,8 @@ var SearchWidget = (function () {
       });
       
       s.searchSelectors.on('click', 'li span', function( event ) {
+        // On clicking, we switch the selection to the clicked item,
+        // and then run the startSearch function.
         var parent = $(this).parent();
         if ( !parent.hasClass('.selected') ) {
           parent.siblings('.selected').removeClass('selected');
@@ -83,6 +88,7 @@ var SearchWidget = (function () {
     },
 
     startSearch: function() {
+      // Get selected item, and navigate.
       var selected = s.searchSelectors.find('.selected');
       window.location = selected.data('url').replace('%s',s.searchInput.val());
     }
