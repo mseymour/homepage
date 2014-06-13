@@ -9,7 +9,8 @@ var SearchWidget = (function () {
       searchForm: $("#search"),
       searchInput: $(".autosearch"),
       searchSelectors: $(".searchselectors"),
-      jsonURL: 'search.json'
+      jsonURL: 'search.json', // where we store our websites for searching
+      blurDelay: 200 // Allows for clicking directly on the search list
     },
 
     init: function() {
@@ -22,7 +23,7 @@ var SearchWidget = (function () {
         var items = [];
         $.each( data, function( key, val ) {
           var selected = (key == 0) ? 'selected ' : '';
-          items.push( '<li class="' + selected + '" data-url="' + val['url'] + '" data-param="' + val['param'] + '">Search <b>' + val['name'] + '</b> for <b class="query"/></li>' );
+          items.push( '<li class="' + selected + '" data-url="' + val['url'] + '" data-param="' + val['param'] + '"><span>Search <b>' + val['name'] + '</b> for <b class="query"/></span></li>' );
         });
 
         s.searchSelectors.html(items.join( '' ));
@@ -64,9 +65,19 @@ var SearchWidget = (function () {
         }
     
       }).on('blur', function() {
-        s.searchSelectors.addClass('hidden');
+        setTimeout(function() {
+          s.searchSelectors.addClass('hidden');
+        }, s.blurDelay);
       });
       
+      s.searchSelectors.on('click', 'li span', function( event ) {
+        var parent = $(this).parent();
+        if ( !parent.hasClass('.selected') ) {
+          parent.siblings('.selected').removeClass('selected');
+          parent.addClass('selected');
+        }
+        SearchWidget.setFormToSelected();
+      });
       
     },
 
