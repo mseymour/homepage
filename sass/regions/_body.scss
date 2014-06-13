@@ -14,6 +14,8 @@ input[type=search] {
   @include box-sizing(border-box);
   background-color: #2C3E50;
   border: 0 none transparent;
+  border-radius: 0;
+  -webkit-appearance: none;
   padding: 8pt;
   width: 100%;
   @include placeholder {
@@ -30,6 +32,8 @@ input[type=search] {
   li { 
     list-style: none;
     span { padding: 8pt; display: block; }
+    //b.query { display: block; }
+    b.query { display: inline-block; vertical-align: baseline; margin-left: 0.165em; }
   }
   .selected, li:hover { background-color: #FFF; color: #2C3E50; span { cursor: pointer; color: #2C3E50; } }
 }

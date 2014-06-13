@@ -23,11 +23,16 @@ var SearchWidget = (function () {
         var items = [];
         $.each( data, function( key, val ) {
           var selected = (key == 0) ? 'selected ' : '';
-          items.push( '<li class="' + selected + '" data-url="' + val['url'] + '" data-param="' + val['param'] + '"><span>Search <b>' + val['name'] + '</b> for <b class="query"/></span></li>' );
+          items.push( '<li class="' + selected + '" data-url="' + val['url'] + '"><span>Search <b>' + val['name'] + '</b> for <b class="query"/></span></li>' );
         });
 
         s.searchSelectors.html(items.join( '' ));
-        SearchWidget.setFormToSelected();
+        //SearchWidget.setFormToSelected();
+      });
+      
+      s.searchForm.on('submit', function ( event ) {
+        event.preventDefault();
+        SearchWidget.startSearch();
       });
   
       s.searchInput.focus().on('keyup focus', function() {
@@ -38,8 +43,6 @@ var SearchWidget = (function () {
         }
     
         s.searchSelectors.find('li .query').text(s.searchInput.val());
-    
-        SearchWidget.setFormToSelected();
       
       }).on('keydown', function( event ) {
         if( !s.searchSelectors.filter('.hidden').hasClass('hidden') ) {
@@ -60,8 +63,6 @@ var SearchWidget = (function () {
         
             event.preventDefault();
           }
-    
-          SearchWidget.setFormToSelected();
         }
     
       }).on('blur', function() {
@@ -76,15 +77,14 @@ var SearchWidget = (function () {
           parent.siblings('.selected').removeClass('selected');
           parent.addClass('selected');
         }
-        SearchWidget.setFormToSelected();
+        SearchWidget.startSearch();
       });
       
     },
 
-    setFormToSelected: function() {
+    startSearch: function() {
       var selected = s.searchSelectors.find('.selected');
-      s.searchForm.attr('action', selected.data('url'));
-      s.searchInput.attr('name', selected.data('param'));
+      window.location = selected.data('url').replace('%s',s.searchInput.val());
     }
 
   };

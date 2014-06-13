@@ -455,14 +455,32 @@ main {
   }
 }
 
-/* line 1, ../sass/partials/_typography.scss */
+/* line 3, ../sass/partials/_typography.scss */
 body {
   font: 12pt/1.6 lato, Helvetica, Arial, sans-serif;
 }
 
-/* line 5, ../sass/partials/_typography.scss */
+/* line 7, ../sass/partials/_typography.scss */
 input[type=search] {
-  font: 100 2em/1.6 lato, helvetica, arial, sans-serif;
+  font: 100 2em/1.6 lato, Helvetica, Arial, sans-serif;
+}
+
+/* line 11, ../sass/partials/_typography.scss */
+.searchselectors li {
+  line-height: 1.0;
+  font-weight: 100;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+/* line 16, ../sass/partials/_typography.scss */
+.searchselectors li b {
+  font-weight: 400;
+}
+/* line 17, ../sass/partials/_typography.scss */
+.searchselectors li b.query {
+  text-transform: none;
+  font-size: 2em;
+  font-weight: 100;
 }
 
 /* line 1, ../sass/regions/_body.scss */
@@ -488,6 +506,8 @@ input[type=search] {
   box-sizing: border-box;
   background-color: #2C3E50;
   border: 0 none transparent;
+  border-radius: 0;
+  -webkit-appearance: none;
   padding: 8pt;
   width: 100%;
 }
@@ -516,28 +536,34 @@ input[type=search]:-ms-input-placeholder {
   color: #6BB9F0;
 }
 
-/* line 25, ../sass/regions/_body.scss */
+/* line 27, ../sass/regions/_body.scss */
 .searchselectors {
   background-color: #2C3E50;
   border-radius: 4pt;
   overflow: hidden;
   padding: 0;
 }
-/* line 30, ../sass/regions/_body.scss */
+/* line 32, ../sass/regions/_body.scss */
 .searchselectors li {
   list-style: none;
 }
-/* line 32, ../sass/regions/_body.scss */
+/* line 34, ../sass/regions/_body.scss */
 .searchselectors li span {
   padding: 8pt;
   display: block;
 }
-/* line 34, ../sass/regions/_body.scss */
+/* line 36, ../sass/regions/_body.scss */
+.searchselectors li b.query {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 0.165em;
+}
+/* line 38, ../sass/regions/_body.scss */
 .searchselectors .selected, .searchselectors li:hover {
   background-color: #FFF;
   color: #2C3E50;
 }
-/* line 34, ../sass/regions/_body.scss */
+/* line 38, ../sass/regions/_body.scss */
 .searchselectors .selected span, .searchselectors li:hover span {
   cursor: pointer;
   color: #2C3E50;
