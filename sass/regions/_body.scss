@@ -3,6 +3,8 @@ body {
   color: #FFF;
 }
 
+a { color: #FFF; }
+
 .searchselectors.hidden, .actions {
   display: none;
 }
@@ -27,7 +29,7 @@ input[type=search] {
   padding: 0;
   li { 
     list-style: none;
-    padding: 8pt;
+    span { padding: 8pt; display: block; }
   }
-  .selected { background-color: #FFF; color: #2C3E50; }
+  .selected, li:hover { background-color: #FFF; color: #2C3E50; span { cursor: pointer; color: #2C3E50; } }
 }

@@ -472,11 +472,16 @@ body {
 }
 
 /* line 6, ../sass/regions/_body.scss */
+a {
+  color: #FFF;
+}
+
+/* line 8, ../sass/regions/_body.scss */
 .searchselectors.hidden, .actions {
   display: none;
 }
 
-/* line 10, ../sass/regions/_body.scss */
+/* line 12, ../sass/regions/_body.scss */
 input[type=search] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -486,7 +491,7 @@ input[type=search] {
   padding: 8pt;
   width: 100%;
 }
-/* line 11, ../sass/regions/_body.scss */
+/* line 13, ../sass/regions/_body.scss */
 input[type=search]:focus {
   background-color: #34495E;
 }
@@ -511,20 +516,29 @@ input[type=search]:-ms-input-placeholder {
   color: #6BB9F0;
 }
 
-/* line 23, ../sass/regions/_body.scss */
+/* line 25, ../sass/regions/_body.scss */
 .searchselectors {
   background-color: #2C3E50;
   border-radius: 4pt;
   overflow: hidden;
   padding: 0;
 }
-/* line 28, ../sass/regions/_body.scss */
+/* line 30, ../sass/regions/_body.scss */
 .searchselectors li {
   list-style: none;
-  padding: 8pt;
 }
 /* line 32, ../sass/regions/_body.scss */
-.searchselectors .selected {
+.searchselectors li span {
+  padding: 8pt;
+  display: block;
+}
+/* line 34, ../sass/regions/_body.scss */
+.searchselectors .selected, .searchselectors li:hover {
   background-color: #FFF;
+  color: #2C3E50;
+}
+/* line 34, ../sass/regions/_body.scss */
+.searchselectors .selected span, .searchselectors li:hover span {
+  cursor: pointer;
   color: #2C3E50;
 }
