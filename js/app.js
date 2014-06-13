@@ -31,19 +31,19 @@ var SearchWidget = (function () {
   
       s.searchInput.focus().on('keyup focus', function() {
         if( s.searchInput.val() != '' ) {
-          $('.searchselectors.hidden').removeClass('hidden'); 
+          s.searchSelectors.filter('.hidden').removeClass('hidden'); 
         } else {
           s.searchSelectors.addClass('hidden');
         }
     
-        $('.searchselectors li .query').text(s.searchInput.val());
+        s.searchSelectors.find('li .query').text(s.searchInput.val());
     
         SearchWidget.setFormToSelected();
-    
+      
       }).on('keydown', function( event ) {
-        if( !$('.searchselectors.hidden').hasClass('hidden') ) {
-          var selected = $('.searchselectors .selected');
-          var items = $('.searchselectors li');
+        if( !s.searchSelectors.filter('.hidden').hasClass('hidden') ) {
+          var selected = s.searchSelectors.find('.selected');
+          var items = s.searchSelectors.find('li');
       
           if ( event.keyCode == 38 || event.keyCode == 40 ) { // arrow up/down
             var direction = event.keyCode == 38 ? 'prev' : 'next';
@@ -66,10 +66,12 @@ var SearchWidget = (function () {
       }).on('blur', function() {
         s.searchSelectors.addClass('hidden');
       });
+      
+      
     },
 
     setFormToSelected: function() {
-      var selected = $('.searchselectors .selected');
+      var selected = s.searchSelectors.find('.selected');
       s.searchForm.attr('action', selected.data('url'));
       s.searchInput.attr('name', selected.data('param'));
     }
