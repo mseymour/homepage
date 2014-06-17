@@ -541,6 +541,9 @@ input[type=search]:-ms-input-placeholder {
   background-color: #2C3E50;
   border-radius: 4pt;
   overflow: hidden;
+}
+/* line 31, ../sass/regions/_body.scss */
+.searchselectors, .searchselectors ul {
   padding: 0;
 }
 /* line 32, ../sass/regions/_body.scss */
@@ -559,12 +562,12 @@ input[type=search]:-ms-input-placeholder {
   margin-left: 0.165em;
 }
 /* line 38, ../sass/regions/_body.scss */
-.searchselectors .selected, .searchselectors li:hover {
+.searchselectors .selected, .searchselectors li.item:hover {
   background-color: #FFF;
   color: #2C3E50;
 }
 /* line 38, ../sass/regions/_body.scss */
-.searchselectors .selected span, .searchselectors li:hover span {
+.searchselectors .selected span, .searchselectors li.item:hover span {
   cursor: pointer;
   color: #2C3E50;
 }

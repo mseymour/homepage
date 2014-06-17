@@ -28,12 +28,12 @@ input[type=search] {
   background-color: #2C3E50;
   border-radius: 4pt;
   overflow: hidden;
-  padding: 0;
+  &, & ul { padding: 0; }
   li { 
     list-style: none;
     span { padding: 8pt; display: block; }
     //b.query { display: block; }
     b.query { display: inline-block; vertical-align: baseline; margin-left: 0.165em; }
   }
-  .selected, li:hover { background-color: #FFF; color: #2C3E50; span { cursor: pointer; color: #2C3E50; } }
+  .selected, li.item:hover { background-color: #FFF; color: #2C3E50; span { cursor: pointer; color: #2C3E50; } }
 }
