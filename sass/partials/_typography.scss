@@ -8,11 +8,13 @@ input[type=search] {
   font: 100 2em/1.6 $default_stack;
 }
 
-.searchselectors li {
-  line-height: 1.0;
-  font-weight: 100;
-  font-size: 1em;
-  text-transform: uppercase;
-  b { font-weight: 400; }
-  b.query { text-transform: none; font-size: 2em; font-weight: 100; }
+.searchselectors {
+  .item {
+    line-height: 1.0;
+    font-weight: 100;
+    font-size: 1em;
+    text-transform: uppercase;
+    b { font-weight: 400; }
+    b.query { text-transform: none; font-size: 1.5em; }
+  }
 }

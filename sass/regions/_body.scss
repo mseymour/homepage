@@ -29,6 +29,8 @@ input[type=search] {
   border-radius: 4pt;
   overflow: hidden;
   &, & ul { padding: 0; }
+  .group:not(:first-child) > .title { border-top: 3px double #67809F; }
+  .group > .title { background-color: #36495D; }
   li { 
     list-style: none;
     span { padding: 8pt; display: block; }

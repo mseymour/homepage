@@ -465,22 +465,21 @@ input[type=search] {
   font: 100 2em/1.6 lato, Helvetica, Arial, sans-serif;
 }
 
-/* line 11, ../sass/partials/_typography.scss */
-.searchselectors li {
+/* line 12, ../sass/partials/_typography.scss */
+.searchselectors .item {
   line-height: 1.0;
   font-weight: 100;
   font-size: 1em;
   text-transform: uppercase;
 }
-/* line 16, ../sass/partials/_typography.scss */
-.searchselectors li b {
+/* line 17, ../sass/partials/_typography.scss */
+.searchselectors .item b {
   font-weight: 400;
 }
-/* line 17, ../sass/partials/_typography.scss */
-.searchselectors li b.query {
+/* line 18, ../sass/partials/_typography.scss */
+.searchselectors .item b.query {
   text-transform: none;
-  font-size: 2em;
-  font-weight: 100;
+  font-size: 1.5em;
 }
 
 /* line 1, ../sass/regions/_body.scss */
@@ -547,26 +546,34 @@ input[type=search]:-ms-input-placeholder {
   padding: 0;
 }
 /* line 32, ../sass/regions/_body.scss */
+.searchselectors .group:not(:first-child) > .title {
+  border-top: 3px double #67809F;
+}
+/* line 33, ../sass/regions/_body.scss */
+.searchselectors .group > .title {
+  background-color: #36495D;
+}
+/* line 34, ../sass/regions/_body.scss */
 .searchselectors li {
   list-style: none;
 }
-/* line 34, ../sass/regions/_body.scss */
+/* line 36, ../sass/regions/_body.scss */
 .searchselectors li span {
   padding: 8pt;
   display: block;
 }
-/* line 36, ../sass/regions/_body.scss */
+/* line 38, ../sass/regions/_body.scss */
 .searchselectors li b.query {
   display: inline-block;
   vertical-align: baseline;
   margin-left: 0.165em;
 }
-/* line 38, ../sass/regions/_body.scss */
+/* line 40, ../sass/regions/_body.scss */
 .searchselectors .selected, .searchselectors li.item:hover {
   background-color: #FFF;
   color: #2C3E50;
 }
-/* line 38, ../sass/regions/_body.scss */
+/* line 40, ../sass/regions/_body.scss */
 .searchselectors .selected span, .searchselectors li.item:hover span {
   cursor: pointer;
   color: #2C3E50;
