@@ -22,7 +22,6 @@ var SearchWidget = (function () {
     });
     s.searchSelectors.append(el);
     $('.item:first', s.searchSelectors).addClass('selected');
-    console.log($('.item:first', s.searchSelectors));
   }
 
   return {
@@ -50,8 +49,6 @@ var SearchWidget = (function () {
           $items,
           $selectedItem,
           selectedIndex = 0;
-          
-      console.log($menu, $items, $selectedItem, selectedIndex);
       
       s.searchForm.on('submit', function ( event ) {
         event.preventDefault();
@@ -61,7 +58,7 @@ var SearchWidget = (function () {
       s.searchInput.focus().on('keyup focus', function() {
         // Unhide the search item list.
         if( s.searchInput.val() != '' ) {
-          s.searchSelectors.filter('.hidden').removeClass('hidden'); 
+          s.searchSelectors.filter('.hidden').removeClass('hidden');
         } else {
           s.searchSelectors.addClass('hidden');
         }
@@ -84,10 +81,14 @@ var SearchWidget = (function () {
                 $selectedItem = $items.eq(selectedIndex).addClass("selected");
                 break;
         }
-      }).on('blur', function() {
-        setTimeout(function() {
-          s.searchSelectors.addClass('hidden');
-        }, s.blurDelay);
+      });
+      
+      $(document).on('click', function(event) {
+        if(!$(event.target).closest(s.searchSelectors).length && !!$(event.target).not(s.searchInput).length) {
+          if(s.searchSelectors.not('.hidden')) {
+            s.searchSelectors.addClass('hidden');
+          }
+        }
       });
       
       s.searchSelectors.on('click', '.item span', function( event ) {
