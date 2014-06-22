@@ -437,22 +437,8 @@ th {
 
 /* line 9, ../sass/partials/_grids.scss */
 main {
-  margin: 1em 2.25em;
+  margin: 24pt;
   padding: 8pt;
-}
-@media (min-width: 1024px) {
-  /* line 9, ../sass/partials/_grids.scss */
-  main {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* line 12, ../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
-  main:after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
 }
 
 /* line 3, ../sass/partials/_typography.scss */
@@ -463,23 +449,6 @@ body {
 /* line 7, ../sass/partials/_typography.scss */
 input[type=search] {
   font: 100 2em/1.6 lato, Helvetica, Arial, sans-serif;
-}
-
-/* line 12, ../sass/partials/_typography.scss */
-.searchselectors .item {
-  line-height: 1.0;
-  font-weight: 100;
-  font-size: 1em;
-  text-transform: uppercase;
-}
-/* line 17, ../sass/partials/_typography.scss */
-.searchselectors .item b {
-  font-weight: 400;
-}
-/* line 18, ../sass/partials/_typography.scss */
-.searchselectors .item b.query {
-  text-transform: none;
-  font-size: 1.5em;
 }
 
 /* line 1, ../sass/regions/_body.scss */
@@ -546,34 +515,24 @@ input[type=search]:-ms-input-placeholder {
   padding: 0;
 }
 /* line 32, ../sass/regions/_body.scss */
-.searchselectors .group:not(:first-child) > .title {
-  border-top: 3px double #67809F;
-}
-/* line 33, ../sass/regions/_body.scss */
 .searchselectors .group > .title {
   background-color: #36495D;
 }
-/* line 34, ../sass/regions/_body.scss */
+/* line 33, ../sass/regions/_body.scss */
 .searchselectors li {
   list-style: none;
 }
-/* line 36, ../sass/regions/_body.scss */
+/* line 35, ../sass/regions/_body.scss */
 .searchselectors li span {
-  padding: 8pt;
+  padding: 4pt;
   display: block;
 }
-/* line 38, ../sass/regions/_body.scss */
-.searchselectors li b.query {
-  display: inline-block;
-  vertical-align: baseline;
-  margin-left: 0.165em;
-}
-/* line 40, ../sass/regions/_body.scss */
+/* line 37, ../sass/regions/_body.scss */
 .searchselectors .selected, .searchselectors li.item:hover {
   background-color: #FFF;
   color: #2C3E50;
 }
-/* line 40, ../sass/regions/_body.scss */
+/* line 37, ../sass/regions/_body.scss */
 .searchselectors .selected span, .searchselectors li.item:hover span {
   cursor: pointer;
   color: #2C3E50;

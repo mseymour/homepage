@@ -7,9 +7,9 @@ $susy: (
 );
 
 main {
-  margin: 1em 2.25em;
+  margin: 24pt;
   padding: 8pt;
   @include breakpoint(1024px) {
-    @include container(960px);
+    //@include container(960px);
   }
 }
