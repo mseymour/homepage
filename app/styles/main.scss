@@ -5,89 +5,61 @@ $icon-font-path: '../fonts/';
 // endbower
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+input[type=search] {
+    &:focus { background-color: $gray-lighter; }
+    box-sizing: border-box;
+    background-color: #FFF;
+    border: 0 none transparent;
+    border-radius: 0;
+    -webkit-appearance: none;
+    padding: 8pt;
+    width: 100%;
+    &:placeholder {
+        opacity: 1;
+    }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.navbar-form {
+    position: relative;
+    &, & .form-group, & .autosearch {
+        width: 100%;
+    }
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+.hidden, .actions { display: none; }
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+.autosearch + .searchselectors {
+    position: absolute;
+    top: $navbar-height;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: #000 0 0 5px;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.searchselectors {
+    background-color: #FFF;
+    border-radius: 4pt;
+    overflow: hidden;
+    &, & ul { padding: 0; }
+    .group > .title { background-color: $gray-lighter; }
+    li { 
+        list-style: none;
+        span { padding: 4pt; display: block; }
+    }
+    .selected, li.item:hover {
+        background-color: $brand-primary;
+        color: FFF;
+        span {
+            cursor: pointer;
+            color: #FFF;
+        }
+    }
 }
